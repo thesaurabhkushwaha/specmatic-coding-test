@@ -9,25 +9,21 @@ import org.springframework.stereotype.Service
 class ProductService(
     private val productRepository: ProductRepository
 ) {
-    fun getAllProducts(type: ProductType?): List<ProductDTO> {
+    fun getAllProducts(type: ProductType?): List<Product> {
         if (type != null) {
-            return productRepository.getAllProducts().map { product ->
-                ProductDTO(product.id!!, product.name, product.type, product.inventory)
-            }
+            return productRepository.getAllProducts()
         }
         return productRepository.getAllProducts().filter { product -> product.type == type }
-            .map { product ->
-                ProductDTO(product.id!!, product.name, product.type, product.inventory)
-            }
     }
 
-    fun insertProduct(productRequest: ProductRequest): ProductResponse {
-        return ProductResponse(
+    fun insertProduct(productRequest: ProductRequest): ProductInsertResponse {
+        return ProductInsertResponse(
             productRepository.insert(
                 Product(
                     name = productRequest.name,
                     type = productRequest.type,
-                    inventory = productRequest.inventory
+                    inventory = productRequest.inventory,
+                    cost = productRequest.cost
                 )
             )
         )

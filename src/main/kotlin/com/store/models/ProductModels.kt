@@ -7,14 +7,8 @@ data class Product(
     var id: Int?=0,
     val name: String,
     val type: ProductType,
-    val inventory: Int
-)
-
-data class ProductDTO(
-    val id: Int,
-    val name: String,
-    val type: ProductType,
-    val inventory: Int
+    val inventory: Int,
+    val cost: Int
 )
 
 data class ProductRequest(
@@ -22,16 +16,20 @@ data class ProductRequest(
     @JsonProperty("name")
     val name: String,
 
-    @field:NotNull
+    @field:NotNull(message = "type cannot be null")
     @JsonProperty("type")
     val type: ProductType,
 
-    @field:NotNull
+    @field:NotNull(message = "inventory cannot be null")
     @JsonProperty("inventory")
-    val inventory: Int
+    val inventory: Int,
+
+    @field:NotNull(message = "cost cannot be null")
+    @JsonProperty("cost")
+    val cost: Int
 )
 
-data class ProductResponse(
+data class ProductInsertResponse(
     @JsonProperty("id")
     val id: Int,
 )
