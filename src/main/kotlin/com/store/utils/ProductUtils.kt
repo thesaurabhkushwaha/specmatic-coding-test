@@ -5,16 +5,16 @@ import com.store.models.ProductType
 class ProductUtils {
 
     companion object{
-        fun isNameValid(name: String): Boolean{
+        fun isNameInvalid(name: String): Boolean{
             return name.toBooleanStrictOrNull() != null || name.toDoubleOrNull() != null
         }
-        fun isTypeValid(type: ProductType): Boolean{
+        fun isTypeInvalid(type: ProductType): Boolean{
             return type == null
         }
-        fun isInventoryValid(inventory: Int): Boolean{
+        fun isInventoryInvalid(inventory: Int): Boolean{
             return inventory == 0
         }
-        fun isCostValid(cost: Double): Boolean{
+        fun isCostInvalid(cost: Double): Boolean{
             return cost == 0.0
         }
     }
