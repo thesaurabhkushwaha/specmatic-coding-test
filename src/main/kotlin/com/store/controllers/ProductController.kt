@@ -29,7 +29,7 @@ class ProductController(
 
 
     @PostMapping
-    fun addNewProduct(@RequestBody productRequest: ProductRequest): ResponseEntity<ProductInsertResponse> {
+    fun addNewProduct(@RequestBody(required = true) productRequest: ProductRequest): ResponseEntity<ProductInsertResponse> {
         if( isNameValid(productRequest.name) ||
             isTypeValid(productRequest.type) ||
             isInventoryValid(productRequest.inventory)||

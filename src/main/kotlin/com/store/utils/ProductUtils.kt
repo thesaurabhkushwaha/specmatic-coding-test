@@ -14,8 +14,8 @@ class ProductUtils {
         fun isInventoryValid(inventory: Int): Boolean{
             return inventory == 0
         }
-        fun isCostValid(cost: Int): Boolean{
-            return cost == 0
+        fun isCostValid(cost: Double): Boolean{
+            return cost == 0.0
         }
     }
 

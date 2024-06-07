@@ -8,7 +8,7 @@ data class Product(
     val name: String,
     val type: ProductType,
     val inventory: Int,
-    val cost: Int
+    val cost: Double
 )
 
 data class ProductRequest(
@@ -26,7 +26,7 @@ data class ProductRequest(
 
     @field:NotNull(message = "cost cannot be null")
     @JsonProperty("cost")
-    val cost: Int
+    val cost: Double
 )
 
 data class ProductInsertResponse(

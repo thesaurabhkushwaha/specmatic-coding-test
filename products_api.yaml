@@ -37,7 +37,7 @@ paths:
                       name: 'XYZ Phone'
                       type: 'gadget'
                       inventory: 2
-                      cost: 450
+                      cost: 450.5
         "400":
           description: Bad Request
           content:
@@ -57,7 +57,7 @@ paths:
                   name: iPhone
                   type: gadget
                   inventory: 100
-                  cost: 450
+                  cost: 450.5
       responses:
         "201":
           description: POST /products
