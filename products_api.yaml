@@ -88,6 +88,7 @@ components:
           $ref: '#/components/schemas/ProductType'
         inventory:
           type: integer
+          minimum: 1
         cost:
           type: number
       required:

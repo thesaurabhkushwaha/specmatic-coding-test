@@ -24,7 +24,7 @@ class ProductController(
 
 
     @PostMapping
-    fun addNewProduct(@RequestBody(required = true) productRequest: ProductRequest): ResponseEntity<ProductInsertResponse> {
+    fun addNewProduct(@Valid @RequestBody(required = true) productRequest: ProductRequest): ResponseEntity<ProductInsertResponse> {
         return ResponseEntity.status(HttpStatus.CREATED).body(productService.insertProduct(productRequest))
     }
 

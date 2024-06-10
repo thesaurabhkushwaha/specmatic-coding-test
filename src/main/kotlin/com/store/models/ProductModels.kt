@@ -1,6 +1,7 @@
 package com.store.models
 
 import com.fasterxml.jackson.annotation.JsonProperty
+import javax.validation.constraints.Min
 import javax.validation.constraints.NotNull
 
 data class Product(
@@ -21,6 +22,7 @@ data class ProductRequest(
     val type: ProductType,
 
     @field:NotNull(message = "inventory cannot be null")
+    @field:Min(value = 1)
     @JsonProperty("inventory")
     val inventory: Int,
 
