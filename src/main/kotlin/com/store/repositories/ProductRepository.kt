@@ -15,7 +15,6 @@ class ProductRepository {
     fun insert(product: Product): Int {
         product.id = id++;
         productDB.add(product)
-        productDB.forEach{p -> println(p)}
         return id;
     }
 }
